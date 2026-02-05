@@ -1,0 +1,20 @@
+[ERROR] process_notes: Error code: 403 - [{'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}]
+Traceback (most recent call last):
+  File "D:\Vibe-Coding\backend\main.py", line 116, in process_notes
+    exam = run_exam_perspective(notes)
+  File "D:\Vibe-Coding\backend\agents\exam_perspective.py", line 16, in run_exam_perspective
+    return complete(SYSTEM, notes, max_tokens=1200)
+  File "D:\Vibe-Coding\backend\services\llm.py", line 16, in complete
+    resp = client.chat.completions.create(
+  File "D:\Python\lib\site-packages\openai\_utils\_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+  File "D:\Python\lib\site-packages\openai\resources\chat\completions.py", line 663, in create
+    return self._post(
+  File "D:\Python\lib\site-packages\openai\_base_client.py", line 1200, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "D:\Python\lib\site-packages\openai\_base_client.py", line 889, in request
+    return self._request(
+  File "D:\Python\lib\site-packages\openai\_base_client.py", line 980, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.PermissionDeniedError: Error code: 403 - [{'error': {'code': 403, 'message': 'Your API key was reported as leaked. Please use another API key.', 'status': 'PERMISSION_DENIED'}}]
+
